@@ -5,7 +5,7 @@
 
 
 class Pixel{
-    private:
+    public:
         unsigned char r, g, b;
     public:
         void setRgb(unsigned char p_r, unsigned char p_g, unsigned char p_b);
@@ -34,8 +34,11 @@ class Image
         Image(Image &);
         void ResetSize(int width, int height);
         void ResetSize(int width, int height, Pixel *img_space);
-        int getWidth(){return this->w;}
-        int getHeight(){return this->h;}
+        int getWidth(){return w;}
+        int getHeight(){return h;}
+        void setImagePointer(Pixel *pixels) {
+            this->img = pixels;
+        }
         Pixel * GetImage(){
             return this->img;
         }

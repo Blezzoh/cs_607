@@ -1,44 +1,43 @@
 #include "filter.h"
 #include "image.h"
-#include <cstdlib>
+#include <cstdio>
 
 
-void Filter::SetInput(Image *image){
-    this->setImage(image);
-}
 
 void Shrinker::Execute(){
-    Image *img = this->GetOutput();
-    int h = img->getHeight();
-    int w = img->getHeight();
+    int h = this->GetInput1()->getHeight();
+    int w = this->GetInput1()->getWidth();
     int o_h = (int)((double)h / 2.0);
-    int o_w = (int)((double)w / 2);
-    Pixel *img_space = (Pixel *)malloc(h * w * sizeof(Pixel));
+    int o_w = (int)((double)w / 2.0);
+    Pixel *img_space = (Pixel *)malloc(o_h * o_w * sizeof(Pixel));
+    Pixel *original = this->GetInput1()->GetImage();
+
+
+    
+    printf("w%d h%d w.%d h.%d\n", w, h, o_w, o_h);
 
     for (int i = 0; i < o_h; i++)
     {
         for (int j = 0; j < o_w; j++)
         {
 
-            unsigned char r = img->GetImage()[(i * 2) * w + (j * 2)].GetR();
-            unsigned char g = img->GetImage()[(i * 2) * w + (j * 2)].GetG();
-            unsigned char b = img->GetImage()[(i * 2) * w + (j * 2)].GetB();
+            unsigned char r = original[(i * 2) * w + (j * 2)].GetR();
+            unsigned char g = original[(i * 2) * w + (j * 2)].GetG();
+            unsigned char b = original[(i * 2) * w + (j * 2)].GetB();
             img_space[i * o_w + j].setRgb(r, g, b);
         }
     }
-    Image *output = new Image(o_w, o_h,img_space);
-    this->setImage(output);
+    this->GetOutput()->ResetSize(o_w,o_h,img_space);
 }
-
-
 void LRCombine::Execute(){
 
-    Image *leftInput = this->GetOutput();
-    Image *rightInput = this->GetOutput2();
+    Image *leftInput = this->GetInput1();
+    Image *rightInput = this->GetInput2();
 
     int h = leftInput->getHeight();
     int w = leftInput->getWidth() + rightInput->getWidth();
     Pixel *pixels = (Pixel *)malloc(sizeof(Pixel) * h * w);
+    printf("LRcombine = w%d h%d \n", h, w);
 
     for (int i = 0; i < h; i++)
     {
@@ -63,14 +62,15 @@ void LRCombine::Execute(){
             pixels[i * w + j].setRgb(r, g, b);
         }
     }
-    Image *output = new Image(w,h,pixels);
-    this->setImage(output); 
+    this->GetOutput()->ResetSize(w,h,pixels); 
+
 }
+
 
 void TBCombine::Execute(){
 
-    Image *topInput = this->GetOutput();
-    Image *bottomInput = this->GetOutput2();
+    Image *topInput = this->GetInput1();
+    Image *bottomInput = this->GetInput2();
     
     int h = topInput->getHeight() + bottomInput->getHeight();
     int w = topInput->getWidth();
@@ -100,20 +100,19 @@ void TBCombine::Execute(){
 
             pixels[i * w + j].setRgb(r, g, b);
         }
-        Image *output = new Image(w,h,pixels);
-        this->setImage(output); 
     }
+    this->GetOutput()->ResetSize(w,h,pixels); 
 }
 
 
 void Blender::Execute(){
 
-    Image *leftInput = this->GetOutput();
-    Image *rightInput = this->GetOutput2();
+    Image *leftInput = this->GetInput1();
+    Image *rightInput = this->GetInput2();
     double factor = this->GetFactor();
     int h = leftInput->getHeight();
     int w = leftInput->getWidth();
-    double factor_left = 1 - factor;
+    double factor_left = 1.0 - factor;
     Pixel *left = leftInput->GetImage();
     Pixel * right = rightInput -> GetImage();
     
@@ -134,6 +133,5 @@ void Blender::Execute(){
             pixels[i * w + j].setRgb(r, g, b);
         }
     }
-    Image *output = new Image(w,h,pixels);
-    this->setImage(output); 
+    this->GetOutput()->ResetSize(w,h,pixels); 
 }

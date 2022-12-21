@@ -1,14 +1,14 @@
 #include "image.h"
 #include "filter.h"
 #include "source.h"
-#include <sink.h>
+#include "sink.h"
 #include "PNMreader.h"
-// #include <PNMwriter.h>
+#include "PNMwriter.h"
 
 int main(int argc, char *argv[])
 {
     PNMreader reader(argv[1]);
-    // PNMwriter writer;
+    PNMwriter writer;
     Shrinker shrinker1;
     Shrinker shrinker2;
     LRCombine lrcombine1;
@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
     blender.SetInput2(reader.GetOutput());
 
     writer.SetInput(blender.GetOutput());
+
+    printf("something -1\n");
 
     reader.Execute();
     shrinker1.Execute();

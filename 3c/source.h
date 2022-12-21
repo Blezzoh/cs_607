@@ -6,15 +6,10 @@
 
 class Source {
     public:
-        Image *image;
+        Image * image = new Image();
     public:
         virtual void Execute()=0;
-        void setImage(Image *param_image){
-            this->image =param_image;
-        }
-        Image * GetOutput(){
-            return this->image;
-        }
+        Image * GetOutput();
 };
 
 #endif

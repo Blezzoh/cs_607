@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <image.h>
+#include "image.h"
 
 
 void Pixel::setRgb(unsigned char p_r, unsigned char p_g, unsigned char p_b)

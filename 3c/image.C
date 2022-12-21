@@ -6,7 +6,9 @@
 
 void Pixel::setRgb(unsigned char p_r, unsigned char p_g, unsigned char p_b)
 {
-    this->setRgb(p_r, p_g, p_b);
+    this->r = p_r;
+    this->g = p_g;
+    this->b = p_b;
 }
 
 Image::Image()
@@ -18,7 +20,7 @@ Image::Image(int width, int height)
 {
     this->w = width;
     this->h = height;
-    this->img = (Pixel *)malloc(h * w * sizeof(Pixel));
+    this->img = (Pixel *) malloc(h * w * sizeof(Pixel));
 }
 
 Image::Image(Image &originalImage)
