@@ -1,0 +1,36 @@
+#ifndef IMAGE_H
+#define IMAGE_H
+
+#include <stdlib.h>
+
+class Pixel {
+public:
+  unsigned char r, g, b;
+
+public:
+  void setRgb(unsigned char p_r, unsigned char p_g, unsigned char p_b);
+  unsigned char GetR() { return this->r; };
+  unsigned char GetG() { return this->g; };
+  unsigned char GetB() { return this->b; }
+};
+
+class Image {
+private:
+  int w, h;
+  Pixel *img;
+
+public:
+  Image(void);
+  Image(int width, int height);
+  Image(int width, int height, Pixel *);
+  Image(Image &);
+  virtual void Update();
+  void ResetSize(int width, int height);
+  void ResetSize(int width, int height, Pixel *img_space);
+  int getWidth() { return w; }
+  int getHeight() { return h; }
+  void setImagePointer(Pixel *pixels) { this->img = pixels; }
+  Pixel *GetImage() { return this->img; }
+};
+
+#endif

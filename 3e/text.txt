@@ -1,0 +1,6 @@
+What does "demand-driven execution" mean? I'm not familiar with the term. Anyway, you could make A::Update() virtual and make it A* B::GetOutput() { return this; }. Then var.GetOutput()->Update(); would be equivalent to var.Update(). I'm not sure I quite grasp the point of the exercise though, unless "demand-driven execution" is a synonym for "pointless busywork".
+
+
+Also note that A::Update isn't virtual and cannot be overridden at all. – 
+Nathan Pierson
+3 mins ago
