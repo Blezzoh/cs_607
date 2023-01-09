@@ -13,6 +13,7 @@ class PNMreader: public Source
         char *  filename;
     public:
         virtual void Execute();
+        void Update();
         PNMreader(char * filename);
         ~PNMreader();
     

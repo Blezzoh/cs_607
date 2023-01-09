@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "main3B.C": "cpp",
+        "image.C": "cpp",
+        "functions.C": "cpp",
+        "main3C.C": "cpp",
+        "PNMreader.C": "cpp"
+    }
+}

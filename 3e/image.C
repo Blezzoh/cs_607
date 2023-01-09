@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "image.h"
+#include "source.h"
 
 
 void Pixel::setRgb(unsigned char p_r, unsigned char p_g, unsigned char p_b)
@@ -53,8 +54,14 @@ void Image::ResetSize(int width, int height, Pixel * image_space){
     this->img = image_space;
 }
 
-void Image::Update(){
+void Image::Update()
+{
     printf("image.c update\n");
+    if (src)
+    { 
+        src->Update();
+    }
 }
+
 
 

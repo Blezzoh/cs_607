@@ -1,7 +1,8 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
-#include <stdlib.h>
+
+class Source;
 
 class Pixel {
 public:
@@ -14,23 +15,26 @@ public:
   unsigned char GetB() { return this->b; }
 };
 
+
 class Image {
 private:
   int w, h;
   Pixel *img;
+  Source *src;
 
 public:
   Image(void);
   Image(int width, int height);
   Image(int width, int height, Pixel *);
   Image(Image &);
-  virtual void Update();
   void ResetSize(int width, int height);
   void ResetSize(int width, int height, Pixel *img_space);
   int getWidth() { return w; }
   int getHeight() { return h; }
   void setImagePointer(Pixel *pixels) { this->img = pixels; }
   Pixel *GetImage() { return this->img; }
+  void setSource(Source * source){ src = source;}
+  void Update();
 };
 
 #endif

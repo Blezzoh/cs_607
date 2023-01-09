@@ -11,7 +11,7 @@ PNMreader::PNMreader(char *filename_in) {
   printf("\npnm filename= %s\n", filename_in);
 
   this->filename = filename_in;
-  
+  this->imageOut->setSource(this);
 
 }
 
@@ -40,6 +40,12 @@ void PNMreader::Execute() {
   f_in.close();
 
 }
+
+void PNMreader::Update()
+{
+	Execute();
+}
+
 PNMreader::~PNMreader() {
   //   free(this->filename);
   // free(this->image); // think about freeing the image space

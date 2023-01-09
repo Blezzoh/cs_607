@@ -5,10 +5,12 @@
 
 class Filter : public Source {
 public:
+  Filter();
   Image *GetInput1() { return image1; }
   Image *GetInput2() { return image2; }
   void SetInput2(Image *img) { this->image2 = img; }
   void SetInput(Image *img) { this->image1 = img; }
+  void Update();
 };
 
 class Shrinker : public Filter {
