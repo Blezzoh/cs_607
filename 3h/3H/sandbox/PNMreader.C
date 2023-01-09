@@ -1,4 +1,5 @@
 #include "source.h"
+#include "logging.h"
 #include "PNMreader.h"
 #include <cstddef>
 #include <cstdlib>
@@ -10,7 +11,9 @@ using namespace std;
 PNMreader::PNMreader(char *filename_in) {
   // printf("\npnm filename= %s\n", filename_in);
 
-  this->filename = filename_in;
+  this->filename = (char *)malloc(sizeof(char) * strlen(filename_in));
+  strcpy(this->filename, filename_in);
+
   this->imageOut->setSource(this);
 
 }
@@ -20,7 +23,7 @@ void PNMreader::Execute() {
   char magicNum[2];
   // char c;
   int width, height, maxval;
-
+  // printf("%s \n", this->filename);
   f_in >> magicNum>>width>>height>>maxval;
   // printf("something1 %s\n%d %d\n%d\n", magicNum, width, height, maxval);
   // off again
@@ -43,13 +46,18 @@ void PNMreader::Execute() {
 
 void PNMreader::Update()
 {
+  char msg[128];
+  sprintf(msg, "%s: start update ...", SourceName());
+  Logger::LogEvent(msg);
 	Execute();
+  sprintf(msg, "%s: done update", SourceName());
+  Logger::LogEvent(msg);
 }
 const char * PNMreader::SourceName(){
   return "PNMreader";
 }
 
 PNMreader::~PNMreader() {
-  //   free(this->filename);
+    free(this->filename);
   // free(this->image); // think about freeing the image space
 }

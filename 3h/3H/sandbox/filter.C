@@ -313,20 +313,20 @@ void TBCombine::Execute() {
   Image *bottomInput = this->GetInput2();
 
   int w = topInput->getWidth();
-  if (this->GetInput1()->getHeight() != this->GetInput2()->getHeight()) {
+  int w2 = this->GetInput2()->getWidth();
+  if (w != w2) {
     hasError = true;
     char msg[256];
-    sprintf(msg, "||%s: width of input 1(%d) is different from input2 (%d)",
-            Name(), w, this->GetInput2()->getWidth());
+    sprintf(msg, "|| width of input 1(%d) is different from input2 (%d)", w, this->GetInput2()->getWidth());
     DataFlowException err(Name(), msg);
     throw err;
   }
   if (!hasError) {
     char msg[128];
+    int h = topInput->getHeight() + bottomInput->getHeight();
     sprintf(msg, "Executing ... %s", Name());
     Logger::LogEvent(msg);
 
-    int h = topInput->getHeight() + bottomInput->getHeight();
     Pixel *pixels = (Pixel *)malloc(sizeof(Pixel) * h * w);
     for (int i = 0; i < topInput->getHeight(); i++) {
       for (int j = 0; j < w; j++) {

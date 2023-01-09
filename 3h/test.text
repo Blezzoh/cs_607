@@ -1,0 +1,140 @@
+Skipping acorso (got a pass previously)
+Skipping adalcher (got a pass previously)
+Skipping amalynur (got a pass previously)
+Running andy1...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Could not find checksum or exception .. crash?
+Skipping andy2 (got a pass previously)
+Skipping andy3 (got a pass previously)
+Skipping andy4 (got a pass previously)
+Running andy5...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Could not find checksum or exception .. crash?
+Skipping andy7 (got a pass previously)
+Skipping aschnab2 (got a pass previously)
+Skipping belan (got a pass previously)
+Skipping bheng (got a pass previously)
+Skipping blindsey (got a pass previously)
+Skipping bludwin (got a pass previously)
+Skipping bmerril2 (got a pass previously)
+Skipping bveber (got a pass previously)
+Running cconklin...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for cconklin
+You have: CHECKSUM: 217, 39, 198
+But master has: Skipping cmisa (got a pass previously)
+Skipping cphillip (got a pass previously)
+Skipping cplachno (got a pass previously)
+Skipping cpotter3 (got a pass previously)
+Skipping crestonw (got a pass previously)
+Skipping cseverso (got a pass previously)
+Skipping danielv (got a pass previously)
+Skipping dbeeman (got a pass previously)
+Skipping dloyd2 (got a pass previously)
+Skipping dpugh (got a pass previously)
+Skipping elopezr2_1 (got a pass previously)
+Skipping elopezr2_2 (got a pass previously)
+Skipping emilywu (got a pass previously)
+Skipping esteing2 (got a pass previously)
+Skipping ezwovic1 (got a pass previously)
+Skipping ezwovic4 (got a pass previously)
+Skipping ezwovic5 (got a pass previously)
+Skipping fangjian (got a pass previously)
+Skipping fsmith (got a pass previously)
+Skipping hank1 (got a pass previously)
+Running hank2...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for hank2
+You have: CHECKSUM: 0, 0, 0
+But master has: CHECKSUM: 9, 149, 83
+Skipping haojund (got a pass previously)
+Skipping hhardin (got a pass previously)
+Skipping hjo (got a pass previously)
+Skipping idnum2 (got a pass previously)
+Skipping jamiez (got a pass previously)
+Skipping jbeder (got a pass previously)
+Skipping jfujii (got a pass previously)
+Skipping jhill12 (got a pass previously)
+Skipping jml (got a pass previously)
+Skipping joeg (got a pass previously)
+Skipping jrodrig2 (got a pass previously)
+Skipping kaelas (got a pass previously)
+Skipping khawks (got a pass previously)
+Skipping kliang (got a pass previously)
+Skipping kporter (got a pass previously)
+Skipping linshuh (got a pass previously)
+Skipping lli6 (got a pass previously)
+Skipping lpoole3 (got a pass previously)
+Skipping mbriones (got a pass previously)
+Skipping mhernan7 (got a pass previously)
+Skipping mlogan (got a pass previously)
+Skipping nbonat (got a pass previously)
+Skipping nel (got a pass previously)
+Skipping nletz (got a pass previously)
+Skipping nolan1 (got a pass previously)
+Skipping ntandows (got a pass previously)
+Skipping palmerh (got a pass previously)
+Skipping plin6 (got a pass previously)
+Running plooi...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for plooi
+You produced a valid image and a checksum, but master produced an exception
+Skipping qfeng (got a pass previously)
+Skipping refealy (got a pass previously)
+Skipping sbattan (got a pass previously)
+Skipping sig (got a pass previously)
+Skipping slandver (got a pass previously)
+Skipping ssvindla (got a pass previously)
+Skipping tcheng6 (got a pass previously)
+Skipping tenright (got a pass previously)
+Skipping tmadden (got a pass previously)
+Skipping tquatrar (got a pass previously)
+Skipping vburn (got a pass previously)
+Skipping vinithag (got a pass previously)
+Skipping vuv (got a pass previously)
+Skipping xueranm (got a pass previously)
+Skipping ybl (got a pass previously)
+Skipping yyu3 (got a pass previously)
+Skipping yzhao8 (got a pass previously)
+Skipping zchen (got a pass previously)
+You have passed 80 out of 85 tests.

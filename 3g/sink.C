@@ -17,12 +17,14 @@ void CheckSum::OutputCheckSum(const char * filename) {
     throw err;
   }
   else{
+    printf("start checksum ...");
+
     int r=0, g=0, b=0;
     int h = this->getImage()->getHeight();
     int w = this->getImage()->getWidth();
     Pixel * original = this->getImage()->GetImage();
     FILE * f_out = fopen(filename, "w");
-
+    printf("calculating checksum ..., %d, %d", h,w);
     for (int i = 0; i < h; i++) {
       for (int j =0; j < w; j++) {
         r +=(int) original[i * w + j].GetR();

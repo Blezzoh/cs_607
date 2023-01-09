@@ -35,6 +35,8 @@ int main(int argc, char *argv[])
     name[8] = '\0';
     Image *finalImage = reader.GetOutput();
 
+    printf("line 38\n");
+
     /* ================================ */
     /*  END STUDENT MODIFIABLE SECTION  */
     /* ================================ */
@@ -43,7 +45,11 @@ int main(int argc, char *argv[])
 
     try
     {
+        printf("line 48\n");
+
         finalImage->Update();
+        printf("line 51\n");
+
     }
     catch (DataFlowException &)
     {
